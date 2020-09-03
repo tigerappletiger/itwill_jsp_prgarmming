@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a_site=prompt("네이버 ,다음, 네이트, 구글중 증겨사용하는 포털사이트를 입력해주세요"," ");
+		var url;
+		switch(a_site){//일치하는 데이터가 있을경우에는 그에 해당하는 실행문을 실행합니다.
+		case "네이버":
+			url="www.naver.com";
+			break;
+		case "다음":
+			url="www.daum.net";
+			break;
+		case "네이트":
+			url="www.nate.com";
+			break;
+		default:
+			url="www.gogle.com";
+			alert("보기에 없는 사이트명을 입력했습니다.");
+		//위의 모든 케이스 유형에 맞지않은 단어를 입력했을 경우만 실행시킨다.
+	}
+		if(url){
+			// location객체의 href 속성에 이동할 사이트 주소를 저항하면
+			// 자동으로 실제 그 사이트 주소로 이동한다.
+			location.href="http://"+url;
+		}//url에 사이트 주소가 저장되있을 경우에는?
+				
+		/* switch(a_site){
+			case "비교할값"://변수와 케이스 유형의 비교값이 동일하면 실행될 문장을 적는다
+				document.write("네이버입니다.");
+				break;
+			case 네이버:
+				document.write("네이버입니다.");
+				break;
+			case 네이버:
+				document.write("네이버입니다.");
+				break;
+			default
+				document.write("네이버입니다.");
+				break;//위 조건과 케이스 유형의 값이 모두 동일하지않을떄 실행할 문장을 적는다 
+		}*/
+	
+	
+	</script>
+</body>
+</html>

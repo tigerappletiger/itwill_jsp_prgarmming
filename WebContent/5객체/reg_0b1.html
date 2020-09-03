@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//검사할 데이터 (입력한 데이터)
+		var str= "Html Css Jquery";
+		//정규 표현 객체(검사할 데이터를 검사하여 제대로 입력했는지 판단해주는 객체) 생성합니다.
+		//var reg1= /패턴/검색옵션;//검색 옵션 생략 가능 패턴:css
+		var reg1= /css/; //var reg1= new RegExp("css");
+		//검색 옵션을 지정하지 않은 정규표현 객체는? 대문자, 소문자를 구별해서 검사 합니다.
+		//변수 str에 저장된 문자열중에서
+		// 대문자 소문자를 구분하여 css라는 문자열이 있는지 검사합니다.
+		// test()라는 메소드를 사용하여 검사할 문자가 있으면 true 없으면 false를 반환
+		document.write(reg1.test(str),"<br>");//false
+		//정규표현 객체(정규 표현식)을 생성합니다.
+		var reg2=/css/i;//i 영문일경우 대소문자를 구분하지않음 
+		document.write(reg2.test(str),"<br>");
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

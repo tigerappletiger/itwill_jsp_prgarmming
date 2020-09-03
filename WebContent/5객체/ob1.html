@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+	/* new 키워드와 기본 객체 생성 함수인 object()이용하여 객체 메모리 생성해보기 */
+	var TV= new Object();//0x 메모 주소 번지가 부여된다.
+	//tv에도 메모리가 부여  //tv메모리가 객체를 찾아갈수있어서 참조변수라고도 부른다.
+	// new라는 키워드를 통해서 객체 생성함수를 이용해 새로운 객체 메모리를 생성한후.
+	//변수 tv에 저장했습니다.
+	//생성된 객체메모리를 변수 tv가 참조한다.var TV= new Object();
+	//생성된 tv변수에 저장되어있는 객체 내부에 width, heigth , color, weight 속성 저장가능
+	TV.width= "30cm";
+	TV.height= "25cm";
+	TV.weight= "20kg";
+	TV.color= "white";// 속성 생성
+	
+	//생성된 tv객체에 off기능을 하는 메소드 함수를 만들어 놓자
+	TV.off=function(){
+		document.write("전원 off","<br>");// 메소드 함수 
+	}
+	//tv객체의 너비값을 얻어 출력하고자 할때.....
+	document.write(TV.width+ "<br>");
+	//tv객체의 높이 속성의 값을 얻어 출력
+	document.write(TV.height+"<br>");
+	//tv객체의 무게 속성의 값을 얻어 출력
+	document.write(TV.weight+"<br>");
+	//tv객체의 색 속성의 값을 얻어 출력
+	document.write(TV.color+"<br>");
+	//tv객체의 전원의 오프기능을 사용하기위해 메서드 호출
+	TV.off();
+ </script>
+</head>
+<body>
+
+</body>
+</html>

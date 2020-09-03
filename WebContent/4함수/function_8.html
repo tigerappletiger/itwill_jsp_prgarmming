@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var num= 0;
+		//함수 정의문
+		function testFnc(){
+			//num 변수값을 1증가 시킴
+			num++:
+				documet.write(num,"<br>")
+				//num 변수가 10일 경우 함수를 강제로 종료 시키셔 더는 재귀함수를 
+				//호출 하지않도록 하기 
+				if(num==10){
+					return;
+				}
+		// 재귀함수 호출: 자기 자신의 함수를 호출
+		testFnc();
+		}
+		
+		//함수 호출문
+		testFnc();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

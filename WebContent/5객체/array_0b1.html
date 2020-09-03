@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//1.
+		var a= new Array();
+		a[0]=10;
+		a[1]="gsgsg";
+		a[2]=true;
+		//2.
+		var e=new Array(30,"gsgsgsg",true)
+		//3.
+		var f= [30,
+		        "배고파 배고파",
+		        true];
+		//세가지 방식은 각각 데이터는 배열로 나뉘어진 저장소에 나열되며
+		//각각의 저장소에는 인덱스 번호(번지수)가 부여됩니다
+		//인덱스 번호는 0부터 시작합니다.
+		
+		//배열 객체 메모리에 저장된 데이터 불러오기 
+		// 문법
+		//참조 변수명 [인덱스 번호]; ->인덱스 번호위치에 저장된값을 얻는다
+		//ff배열의 0번 인덱스 출력
+		var i;
+		for(i=0;i<f.length;i++){
+			document.write(f[i]+"<br>");
+		}
+		var t=[10,1,2,
+		       5,20,8,
+		       13,6,7];
+		/* for(i=0;i<t.length;i++){
+			document.write(t[i]+"<br>");
+		} */
+		for(var z in t){
+			document.write(t[z]+"<br>");
+		}
+		/* for(var z in t){
+			document.write(t[z]+"<br>");
+		} */ //위 포문은 배열객체 t에 저장된 데이터 총개수만큼 반복 실행됩니다.
+		// 0~8까지 인덱스가 존재합니다. t방 0~8까지 1씩 증가되면서 실행문이 시작합니다. t의 크기만큼 z가 증가
+		//인덱스 위치값을 z변수에 저장한다. 방이름 0,~8번
+		</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//문자 객체를 생성하고 메소드와 속성을 알아보자
+		var i;
+		var a=new String("안녕하세요");//문자열
+		for(i=0;i<a.length;i++){
+			document.write("방에 저장된 값은 ="+a[i],"<br>");
+		}
+		var b="안녕하세용";//리터럴 문자열
+		//참조 변수 t 선언하고 문자열 객체를 생성해서 저장
+		var t="Hello Thank you good luck to you";
+		for(i=0;i<t.length;i++){
+			document.write("방에 저장된 값은 ="+t[i],"<br>");
+		}
+		document.write(t.charAt(16),"<br>");//포지션 위치 값을 반환해준다.
+		//0번째 부터 16번쨰 위치한 문자를 반환해준다 
+		document.write(t.indexOf("you"),"<br>");
+		// 왼쪽부터 찾을 문자와 일치하는 문자의 인덱스 번호를 반환함
+		// 찾는 문자가 없을 경우 -1 값을 반환함
+		//t.indexOf("찾을문자",인덱스 번호)
+		document.write(t.indexOf("you", 16), "<br>");
+		// t.indexOf("you")//왼쪽부터 오른쪽으로 t객체 문자열에서 you가 저장된 인덱스 번호를 반환합니다.
+		// t.indexOf("to", 27)//위와 차이점은 어디서부터 탐색할지  y라는 인덱스 번호를 반환한다 
+		//t.lastIndexOf(searchString, startPosition)
+		//문자열에서 오른쪽부터 찾을 문자와 일치하는 문자를 찾아 최초로 일차하는 문자의 인덱스 번호를 반환
+		//없으면 -1 을 반환
+		document.write(t.lastIndexOf("you"),"<br>");
+		document.write(t.lastIndexOf("you", 25), "<br>");
+		//25 왼쪽 방향으로 문자열을 찾습니다. 이때 최초 발견된 인덱스 번호 12를 반환
+		 document.write(t.match("luck"),"<br>");
+		//럭이라는 문자열을 반환한다 하지만 포함되어 있지않을떄는 널값을 반환함 
+		// 메소드  문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 최초로
+		// 찾은 문자를 반환 찾을 문자가 없으면 널 반환\
+		document.write(t.search("luck"),"<br>");
+		// t변수에 참조된(저장된) 문자열 객체에서 럭을 찾아 최초발견된 l 문자의 인덱스 값을 반환한다
+		//substr(a,문자개수)-> 문자열에 a인덱스부터 지정한 문자 개수만큼 문자열을 잘라서 반환함 
+		var str="960214-1147850";
+		// 스트링값이 배열에 저장되있기 떄문에 0번쨰 부터 저장되며 시작위치부터 엔드 위치까지 잘라낸다
+		document.write(str.substr(0, 6),"<br>");
+		//
+		document.write(str.substring(0, 6),"<br><br>");
+		// a인덱스 부터 b인덱스 이전까지구간의 문자를 잘라서 반환 
+		document.write(str.replace("960214","950214"),"<br>");
+		//(내가 바꾸고싶은 값,바꿔질 값)
+		document.write(t.toLowerCase(),"<br>");
+		document.write(t.toUpperCase(),"<br>");
+		document.write(str.length,"<br>");
+		//split("문자") 지정한 문자를 기준으로 문자 데이터를 나누어 새로운
+		//배열에 각각 저장하여 배열자체를 반환합니다.
+		//var str_sum=str.split(separator, limit)
+		var s=t.split(" ");//빈 공백을 기준으로 잘라내서
+		document.write(s[4],"<br>");
+		document.write(s.length,"<br><br>");
+		for(i=0;i<s.length;i++){
+			document.write("스플리트 저장값 ="+s[i],"<br>");
+		}
+		var str2="A";
+		//str.charCodeAt(str2);// 문자열에 인덱스 번호위치에 존재하는 해당문자의 아스키코드 반환
+		document.write(str.charCodeAt(str2));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

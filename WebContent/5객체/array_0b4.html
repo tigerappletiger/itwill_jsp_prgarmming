@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var greenLine=["사당","방배",
+				       "교대","강남"];
+		var yellowLine=["미금","정자",
+					    "모란","수서"];
+		document.write(greenLine.concat(yellowLine),"<br><br>");
+		//2개의 배열객체가 하나의 배열객체로 생성됨
+		greenLine.pop();
+		document.write(greenLine,"<br><br>");
+		// 배열 전체 데이터중 마지막 인덱스 데이터를 삭제한다.
+		greenLine.push("삼성");
+		document.write(greenLine,"<br><br>");
+		// 퓨시 메소드는 마지막 인덱스 위치에 새로운 데이터를 삽입
+		greenLine.shift();
+		document.write(greenLine,"<br><br>");
+		//shift 메소드로 그린라인 배열의 맨앞 인덱스 위치의 데이터를 삭제
+		greenLine.unshift("1111");
+		document.write(greenLine,"<br><br>");
+		//unshift 메소드를 이용하여 맨앞위치에 1111삽입
+	</script>
+</head>
+<body>
+
+</body>
+</html>

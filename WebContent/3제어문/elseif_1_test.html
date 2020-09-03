@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+		<!-- //사이트 방문자에게 현재 몇월인지를 입력받아  mon 변수에 저장,
+		// 입력 란에 기본값을 0으로 
+		// 9~11 독서의 계절 가을 이네요
+		//6~8 여름이네요 ,3~5 햇빛 가득한 봄이네요, 그밖 스키의 계절 겨울이네요 -->
+		 	var num= prompt("몇월인가요 ?", 0);
+			if((num>=9)&&(num<=12)){
+				document.write("독서계절 가을이네요");
+			}
+			else if(num>=6){
+				document.write("여름이네요");
+			}
+			else if(num>=3){
+				document.write("햇빛 가득한 봄이네요");
+			}
+			else{
+				document.write("스키의 계절 겨울이네요");
+			}
+			</script>
+</body>
+</html>

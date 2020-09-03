@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var num1=3.456789;
+		var num2=700000;
+		var num3="30.5px";
+		var num4=40;
+		//num1 변수에 저장된값 3.456789에 유효한 숫자 2개(3.4)에 반올림 하여 
+		//3.5를 문자열 형태로 반환
+		document.write(num1.toPrecision(2)+"<br>");
+		//num3변수에 저장된30.5px 문자열을 실수만 남겨 30.5로 변환하여
+		//반환하고 넘4의 값40과 더합니다. 최종적으로 70.5로 출력
+		document.write(parseFloat(num3)+num4+"<br>")
+		document.write(parseInt(num3)+num4+"<br>");
+		//넘4 변수의 값을 40더합니다. 최종적으로 70을 출력함 
+		document.write(parseInt(num3)+"<br>");//중요
+		//"30.5px"를 parserint()메소드를 호출하여 정수만 남겨 30을 반환
+		document.write(num1.toString()+"<br>");// 숫자를 문자열로 반환 중요
+		document.write(num1.toFixed(2)+"<br>");//둘쨰자리 반올림//3.46
+		document.write(num2.toExponential(1)+"<br>");
+		//num2 변수에 저장된 숫자 객체의 메소드 호출시 1을 전달하면 70만을 지정한 고정 소수점 자리만큼
+		//지수표기법으로 값을 반환합니다
+		// 소수점 첫번째 자리까지 표기되고 7.0 x 100000이므로
+		// 지수 표기법은 7.0e+5
+	</script>
+</head>
+<body>
+
+</body>
+</html>

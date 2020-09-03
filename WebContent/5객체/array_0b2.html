@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		/* 
+			배열 객체 메소드 및 속성 
+			종류				설명
+			join(연결문자)		배열객체에 데이터를 연결문자 기준으로 1개의 문자형 데이터로 반환
+			reverse()		배열객체 데이터의 순서를 거꾸로 바꾼후 반환
+			sort()			배열객체에 데이터를 오름차순으로 정렬합니다.
+			slice(index,index2) 배열 객체에 데이터중 원하는 구간만큼 잘라서 배열객체로 가져온다.
+			//[안|녕|하]->[안녕|하]
+			splice() 		배열객체에 지정 데이터를 삭제하고 그 구간에 새 데이터를 삽입할수있다.
+			concat()		2개의 배열 객체를 하나로 결합시킵니다.
+			pop()			배열에 저장된 데이터중 마지막 인덱스 위치에 저장된 데이터를 삭제합니다.
+			push(new data) 	배열객체에 마지막 인덱스 위치에 새 데이터를 삽입합니다.
+			shift()			배열객체에 저장된 데이터 중 첫번째 인덱스 위치에 저장된 데이터를 삭제합니다.
+			unshift(new data) 배열객체의 가장 앞의 인덱스 위치에 새데이터를 삽입합니다.
+			length 속성 		배열에 저장된 총 데이터의 개수를 반환함.
+		*/
+			// 예제1. 배열 객체 메소드 중에서 join() 메소드와 reverse()사용한 예제
+			var num =["사당","방배",
+			          "교대","강남"];
+			// 기준문자/기준으로 배열 값들이 하나의 문자열 데이터로 결합되어 반환 받습니다.
+			document.write(num.join("/"),"<br>")//원래 데이터를  /로 나눈후 하나의 문자열로 만든후 리턴해준다.
+			document.write(typeof num.join("/"),"<br><br>")
+			 //2. reverse()사용한 예제
+			 //넘 배열객체의 값 순서가 거꾸로
+			 document.write(num.reverse(),"<br>");
+			//3. sort() 배열의 값들을 오름차순으로 정렬후 배열자체를 반환
+			document.write(num.sort(),"<br>") //아래에서 위로 올라간다고 오름차순 정렬
+			
+	</script>
+</head>
+<body>
+
+</body>
+</html>

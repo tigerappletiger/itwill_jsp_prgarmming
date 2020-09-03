@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		/* 수학 객체는 수학에서 자주 사용하는 상수와 함수들을 미리 구현
+		해놓은 내장객체이다. 수학 객체를 생성하지 않아도 수학 객체의 모든 메소드나
+		속성을 바로 사용할수있다.*/
+		var num=2.1234;
+		var maxnum= Math.max(10,5,8,100);//숫자중 가장 큰값을 반환한다.
+		var minnum= Math.max(10,5,8,100);
+		// math.round()메소드 중요함 인수로 전달받은 값을 소수점 첫번째 자리에서 반올림 반환
+		var roundnum=Math.round(num);
+		document.write(roundnum+"<br>");
+		//math.floor() 메소드 
+		// 인수로 전달 받은 값과 같거나 작은수 중에서 가장 큰수를 반환함 
+		// 소수점 첫쨰 자리에서 무조건 내림해서 정수를 반환.
+		var floorNum=Math.floor(num);
+		document.write(floorNum+"<br>");
+		var floornum2= Math.floor(10.95);
+		document.write(floornum2+"<br>");
+		var floornum3= Math.floor(11.95);
+		document.write(floornum3+"<br>");
+		//math.ceil() 메소드
+		//소수점 첫째 자리를 무조건 올림처리 하여 반환
+		var ceilNum=Math.ceil(num);
+		document.write(ceilNum+"<br>");
+		//math.random 0~1랜덤값을 발생시킨다.
+		// 0보다 크거나 같고 1보다 작은 무작위 숫자를 발생시켜 반환함
+		var rn=Math.random();
+		document.write(rn+ "<br>");
+		//math.pow(x,y)
+		//x의 y승을 반환함
+		var pow=Math.pow(2,10)
+		document.write(pow+ "<br>");
+		//math.pi 상수 
+		var pinum=Math.PI;
+		document.write(pinum+ "<br>");
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

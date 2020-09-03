@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		/* 아래의 폼 요소 2개를 몽땅 가져와서 css문법을 이용해서 꾸며 주자 */
+		form{
+		/* 너비 550px로 설정 */
+		 	width: 350px; 
+		}
+		#terms{
+			/* #이 id속성값이 ~ 
+				
+			*/
+			background: pink;
+		}
+	
+	</style>
+	
+
+</head>
+<body>
+	<!-- <form>요소 선택자 :폼안에 있는 모든 요소
+	사이트 방문자가 회원가입을 할떄, 약관 동의 여부를 묻거나 가입 양식에 입력한 값이 유효한
+	값인지 검사하기 위해서  <form>요소 내부에 입력 요소를 선택하고 속성을 제어 할수 있어야 합니다.
+	
+	<form>요소 선택방식
+	document.getEelementBYid("아이디명") -아이디를 선택하면 인풋 요소를 가져올수있음 
+	인풋요소를 아이디를 사용해서 가져올수있다 요소를 아이디로 선택할떄 사용한다.
+	
+	document.form요소에 name속성명.입력요소의 name속성명
+	-요소를 name 속성명으로 선택할떄 사용합니다.
+	
+	
+	-->
+	<!-- 서버페이지인 .jsp페이지로 요청시 값을 전송하는 역할을 함 
+	<form action="요청할 서버페이지 주소", method="전송방식을 설정 get 또는 post" name="f1">
+	//폼안의 정보를 입력받아 서버페이지에 요청값을 전송할때 쓴다.
+	</form> -->
+	<!-- <form action="#" method="get" name="f1">  index.jsp라는 서버페이지를 만들거야 -->
+		<form action="index.jsp" method="get" name="f1">
+		<fieldset>
+		 <legend>폼요소1</legend>
+		<p>
+			<label>비밀번호</label>
+			<input type="text" name="user_pw1 " id="user_pw1"/> <!-- 비밀번호 입력공간이 생긴다 -->
+		</p>
+		
+		
+		<p>
+			<label>비밀번호 확인</label>
+			<input type="text" name="user_pw2 " id="user_pw2"/>
+			
+			<input type="submit" value="확인"/>
+		<!--한개만 폼내부에 만들수있고 누르면 폼내부의 정보가 제출이된다. 서브밋 누르면 
+		메모리에 저장되있던 정보들이 엑션 메시지  인덱스.jsp 실행 -->
+		</p>
+
+		</fieldset>
+	</form> 
+	
+	
+	
+	
+	<form action="index.jsp" method="get" name="f2">
+		<fieldset>
+			<legend>폼요소2</legend>
+				<div id ="terms">
+				회사의 법령이 정하는 바에 따라 "회원"의 개인정보를 보호하기 위해
+				노력합니다. 개인정보의 보호 및 사용에 대해서는 관련법 및 회사의 개인 정보 취급 방침이
+				적용됩니다.
+				</div>
+					<p>
+						<input type="Checkbox" name ="accept" id="accept"/>
+						<label>약관 동의 합니다.</label>
+					</p>
+					<p>
+						<input type="Checkbox" name ="allchk" id="allchk" checked/>
+						<label>전체선택</label>
+						<br>
+						<input type="Checkbox" name ="subject1" id="s1"/>
+						<label>과목1</label>
+						<br>
+						<input type="Checkbox" name ="subject2" id="s2"/>
+						<label>과목2</label>" 
+						<br>
+						<input type="Checkbox" name ="subject3" id="s3"/>
+						<label>과목3</label>" 
+					</p>
+					<p>
+						<input type="submit" value="등록완료(전송버튼)"/>
+						<input type="reset"/>
+					</p>	
+		</fieldset>
+	</form>
+	
+	
+	
+	
+	
+	
+		<script type="text/javascript">
+			//위의 form 요소 전체를 선택해서 가져와서
+			document.f1
+			//전송 버튼을 클릭했을때 이벤트 처리함수 function(){}이 실행되게 선언
+			document.f1.onsubmit=function(){
+				//비밀번호 입력 요소중.. input요소의 name 속성의 값이 "user_pw1"인 요소를 선택해서
+				//가져와서 pw1변수에 저장 
+				var pw1=document.f1.user_pw1;
+				//var pw1=document.f1.user_pw1.va;
+				//alert(pw1);
+				// 비밀번호 확인 입력요소 <input>를 선택해서 가져와서 pw2변수에 저장
+				var pw2= document.f1.user_pw2;
+				
+				//방문자가 작성한 비밀번호 값을 비밀번호 확인 input 요소의 value속성값으로 입력되도록 설정
+				pw2.value=pw1.value;
+				 
+				 //비밀번호 확인 input 요쇼에 더이상 입력할수 없게 막아 버리자 (비활성화 시키자)
+				 pw2.disabled=true;
+				 
+				 //이벤트 처리함수 마지막 부분에 return false를 작성하면 from태그의 action 속성의
+				// jsp페이지로 이동되는것을 차단시켜준다.
+				//return false;
+			}
+			
+			
+			//전체선택 체크박스를 클릭했을떄 이벤트 처리 함수 (익명함수)의 코드가 실행되게 선언
+			document.f2.allchk.onclick = function(){
+				//alert("전체 선택 체크박스를 클릭하여 체크됨");
+				//this : 이벤트가 발생한 요소를 가리킬수 있는 키워드임
+				//여기서는 전체 선택<input> 요소에 체크되었을 경우에는 true 반환
+				if(this.checked==true){
+					//checked 속성 - 체크박스 또는 라디오 버튼 태그에 체크상태값을
+					//반환 하거나 또는 체크 여부를 제어할수있습니다.
+					// 체크가되어있으면 트루
+					//해제되어있으면 거짓이 반환
+					
+					// 전체선택 체크 박스에 체크 되어 있다면 
+					document.f2.subject1.checked=true;// 과목 1에 대한 체크박스 체크되게하기
+					document.f2.subject2.checked=true;// 과목 2에 대한 체크박스 체크되게하기
+					document.f2.subject3.checked=true;// 과목 3에 대한 체크박스 체크되게하기
+				}
+				else{
+					document.f2.subject1.checked=false;// 과목 1에 대한 체크박스 체크 해제
+					document.f2.subject2.checked=false;// 과목 2에 대한 체크박스 체크 해제
+					document.f2.subject3.checked=false;// 과목 3에 대한 체크박스 체크 해제
+				}//전체 체크박스 체크 안되있음 	
+			}
+	
+			/* 이벤트 종류
+				onclick 선택한 요소를 마우스로 클릭했을떄의 행위
+				onmouseover 선택한 요소에 마우스 포인터를 올리는 행위 
+				onmouseout 선택한 요소에 마우스 포인터가 벗어 나게 하는 행위
+				onsubmit 선택한 form 요소로 전송이 일어나게 하는 행위 
+			*/
+			//2번쨰 form요소를 선택해서 가져와서 전송버튼을 누른 행위를 등록(이벤트)를 등록하여 
+			// 웹페이지에 접속한 사용자가 전송 버튼을 눌렀을떄..이벤트가 발생했을떄 이벤트를 처리해주자
+				document.f2.onsubmit=function(){
+				var act2=document.f2;
+				if(act2.accept.checked==false){
+					alert("약관 동의 해야합니다.");
+					act2.accept.focus();
+					//이벤트가 발생 했을떄 처리할 코드 작성
+					// 약관한 동의 체크 박스 input 요소를 선택해서 가져오기
+					// 약관 동의 체크 박스에 input 요소에 체크 되어 있지 않을 경우
+					// "약관 동의 해야합니다." 경고 메세지창 
+					// 약관 동의 체크박스에 포커스를 주어 사용자가 체크 하도록 유도합니다. focus(())
+					//form 요소의 action jsp 페이지로 전송하는 것을 차단
+					return false;
+				}
+				else if(act2.subject1.checked==false){
+					alert("과목1을 체크 해야합니다.");
+					act2.subject1.focus();
+					return false;
+				}
+				//과목1 체크박스 input 요소에 체크 되어 있지 않다면
+				//과목1 을 체크 해야합니다. 경고 메세지창
+				//과목 1 체크 박스에 포커스 이동
+				// 전송 취소
+				else if(act2.subject2.checked==false){
+					alert("과목2을 체크 해야합니다.");
+					act2.subject2.focus();
+					return false;
+				}
+				else if(act2.subject3.checked==false){
+					alert("과목3을 체크 해야합니다.");
+					act2.subject3.focus();
+					return false;
+				}
+				else if(document.getElementById("subject3").checked==false){
+					alert("과목3을 체크해야합니다.");
+					document.getElementById("subject3").focus();
+					//전송취소
+					return false;
+				}
+			}
+			
+		</script>
+		
+		
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+		
+	</div>
+		<script type="text/javascript">
+			//1.직접 선택자를 이용해 id속성의 값이 wrap인 <div> 요소를 선택합니다.
+			//2. 인접 관계 선택자를 이용해 첫번째 요소인 <p>내용 </p>를 최종 선택해서 가져와서
+			//3. 텍스트 노드 (텍스트)색상을 빨간색으로 적용
+			// ie8이하에서만 동작한다 그외 브라우저에서는 요소를 선택하지않고 빈공백 문자가 선택된다.
+			document.getElementById("wrap").firstChild.style.color="red";
+			
+			
+			//위에 <p>요소들 중에서... 두전째 <p> 요소를 선택해서 가져와서 p변수에 저장하기
+			var p =document.getElementsByTagName("p")[1]; //<p>내용2</p>//배열에 넣어야함 테그네임은
+		
+			//p변수에 저장되어있는 //<p>내용2</p> 요소 바로 다음 요소인 <p>내용3</p>를 최종 선택하기 위해서는
+			//인접관계 선택자중에.. 다음 요소 선택자(nextsibling)을 사용함
+			// ie8이하에서만 동작한다 그외 브라우저에서는 요소를 선택하지않고 빈공백 문자가 선택된다.
+			p.nextSibling.style.backgroundColor="yellow";
+			
+			
+			
+			/* 인접 관계 선택자로 문서 객체를 선택해 스타일 적용하기 
+			 	-직접 선택자를 사용하여 원거리에 요소까지 선택한후 인접관계 선택자를 사용해서  앞에서 선택한 요소를 기준으로 
+			 	근거리에 있는 요소를 선택한다.
+			*/
+		</script>
+</body>
+</html>

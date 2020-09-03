@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//현재 날짜 정보를 제공해주는 date 객체 메모리 생성
+		var t =new Date();//date 라는 생성자를 통해서 객체를 생성
+		//현재 날짜 정보중에 현재 월의 정보를 얻고 싶을떄 
+		//date 객체 내부의 getmonth()메소드를 호출하여 얻을 수 있다.
+		//참고로 : 현재 월의 정보는 1적제 반환 한다.
+		var nowmonth=t.getMonth()+1;
+		document.write(nowmonth+"<br>");
+		//현재 날짜 정보중에 현재 일정보를 얻고 싶을때...
+		//date 객체 내부의 getdate() 메소드를 호출하여 얻을 수있다.
+		var nowdate= t.getDate();
+		document.write(nowdate+"<br>");
+		//현재 요일 정보를 얻고 싶을떄 date 객체 내부에 존재하는 getday(메소드를 ) 호출하여 얻는다
+		// 현재 요일 정보 0:일요일  6:터요일
+		var nowday =t.getDay();
+		document.write(nowday+"<br>");
+		//2002년 한일 월드컵
+		// 특정 날짜의 정보를 제공받아야하므로 특정날짜에 대해서 date 객체를 생성해서 
+		//사용해야한다
+		//참조변수 =new date(연, 월 -1.일);
+		var m = new Date(2002,4,31);// 2002.5.31날짜 정보를 갖는 데이트 객체 생성
+		var themonth=m.getMonth()+1;
+		var thedate=m.getDate();
+		var theday=m.getDay();
+		document.write(themonth+"<br>");//데이트 객체에서 월 정보를 가져옵니다.
+		document.write(thedate+"<br>");//데이트 객체에서 일정보를 가져옵니다.
+		document.write(theday+"<br>");//데이트 객체에서 요일 정보를 가져온다.
+		document.write("<hr>");
+		var date=new Date();
+		var y=date.getFullYear();//연도정보
+		var m=date.getMonth()+1;//1달 적을 개월수
+		var d=date.getDate();//일정보
+		var s=date.getHours();//현재 시간
+		var min=date.getMinutes();//현재 분
+		var second=date.getSeconds();// 현재 초
+		document.write(y+"."+m+"."+d+"."+s+"."+min+"."+second+" ");
+		</script>
+</head>
+<body>
+
+</body>
+</html>
