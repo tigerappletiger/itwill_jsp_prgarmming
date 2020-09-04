@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	 <script type="text/javascript">
+	 window.onload=function(){
+		/* "<h1></h1>"
+		createElement("생성할 html명") 메소드를 사용하여 <h1>객체 생성 */
+		var header=document.createElement("h1");
+		//문자열 값을 갖는 text 노드 생성 "DOM생성"
+		var headerText= document.createTextNode("DOM생성");
+		//appendChild메소드 호출시 자식 text노드를 전달하여 추가
+		//<h1>dom생성</h1>
+		header.appendChild(headerText);//"<h1>요기</h1>" 요기 사이에 값을 넣는다.
+		//body 태그에 위에서 생성한 h1 element노드 <h1>dom 생성</h1>를 추가한다.
+		document.body.appendChild(header);// 바디영역안에 넣겠다.
+	 }
+	</script> 
+</head>
+<body>
+	<!-- <script type="text/javascript">
+		/* "<h1></h1>"
+		createElement("생성할 html명") 메소드를 사용하여 <h1>객체 생성 */
+		var header=document.createElement("h1");
+		//문자열 값을 갖는 text 노드 생성 "DOM생성"
+		var headerText= document.createTextNode("DOM생성");
+		//appendChild메소드 호출시 자식 text노드를 전달하여 추가
+		//<h1>dom생성</h1>
+		header.appendChild(headerText);//"<h1>요기</h1>" 요기 사이에 값을 넣는다.
+		//body 태그에 위에서 생성한 h1 element노드 <h1>dom 생성</h1>를 추가한다.
+		document.body.appendChild(header);// 바디영역안에 넣겠다. -->
+	</script>
+</body>
+</html>

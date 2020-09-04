@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 	<h1 id="header1">헤더입니다.</h1>
+ 	<p id="p1">p1입니다.</p><!--P요소라고 부른다  -->
+ 	<p id="p2">p2입니다.</p><!-- 아이디 속성값은 중복하면 안된다-->
+</body>
+	<script type="text/javascript">
+		//getElementbyid()메소드를 이용하여 각 요소들을 선택해오기
+		var h1=document.getElementById("header1");
+		var h2=document.getElementById("p1");
+		var h2=document.getElementById("p2");
+		console.log(h1.innerHTML+"\t"
+				+p1.innerHTML +"\t"
+				+p2.firstChild.nodeValue);//웹브라우저의 콘솔탭을 말한다  슬러시 탭 
+		//innerHTML 속성 또는 firstChild.nodeValue 속성을 이용하여 
+		//요소의 텍스트 내용을 얻어 웹브라우저의 콘솔탭에 로그로 출력한 f12눌러야 볼수있다.
+		//p2.firstChild.nodeValue : id속성 값이 p2인 p요소의 첫번째 자식 텍스트 노드의 값을 반환함.
+		//firstChild 자식요소를 선택해온다 (선택자)
+	</script>
+</html>
