@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	/* 웹페이지의 방문자가 입력한 이름과 연락처가 정해진 정규패턴에 맞게 작성되었는지 검사합니다.
+	만약 틀리게 작성했을 경우에는 경고창을 띄우고 다시 작성을 유도할수있도록 입력란에 포커스를 준다.*/
+		function submit_chk(myForm){
+			var reg1=/^[가-힣]{2,5}$/;
+			/* 입력한 이름을 검사하기 위해 작성
+			한글을 2~5사이로 입력했는지 판단하는 정규표현식 생성 */
+			var reg2=/^(010|016|011)\d{3,4}\d{4}$/;
+			/* 입력한 연락처를 검사하기 위해 작성
+			첫글자는 010,016, 011중 하나로 시작되어야 하고,
+			다음은 숫자 3~4개까지 오게하고, 마지막으로 숫자 4개가 입력되었는지 판단하는 정규표현식 생성 */
+			var name= myForm.user_name;
+			/* document.f1= this=myForm
+			 이름을 입력하는 <input type="text" name="user_name"/>요소를 선택해서 가져와
+			변수 name에 저장  */
+			var tel= myForm.user_tel;
+			/* 연락처를 입력하는 <input type="text" name="user_tel"  요소를 선택해서 가져와
+			변수 tel에 저장 */
+			var result1 = reg1.test(name.value);
+			/* 방문자가 입력한 이름이 정규 표현식의 패턴에 맞게 작성되었는지 검사
+			정규표현식에 맞게 작성하면 true를 반환하고 어긋나게 작성되면 false를 리턴한다. */
+			var result2= reg2.test(tel.value);
+			/* 방문자가 입력한 연락처가 정규표현식의 패턴에 맞게 작성되었는지 검사 */
+			if(!result1){
+				alert("이름 입력이 잘못되었습니다.");
+				//입력한 이름이 정해진 규칙에 어긋나게 작성 했을 경우
+				name.value=" ";
+				//이름 입력할수있는 곳에 입력된 값을 빈공백으로 주어 삭제 해주자
+				name.focus();
+				/* 이름 입력할수 있는곳 input 요소에 포커스 준다.
+				form 요소의 action속성의 index.jsp로 전송되는 것을 차단하기 위해
+				form요소로 return false를 이용해 false를 리턴함 */
+				return false;
+				//입력한 연락처를 정해진 규칙에 어긋나게 작성했을 경우
+			}
+			else if(!result2){//위에 2가 잘못된값이 입력되면 false를 반환함 여기서 그 반대는 참이니 실행
+				alert("연락처 입력이 잘못되었습니다.");
+				tel.value=" ";
+				tel.focus();
+				return false;
+			}
+		}
+		function reset_chk(myForm){
+			/* 가입 취소 버튼을 눌렀을떄 함수내의 실행문이 실행됩니다.
+			정말로 회원가입을 취소하시겠습니까?? 라는 확인/취소 버튼이 있는 창을 띄우고
+			만일 취소버튼을 눌렀을때 false를 리턴받아 반환하여 가입 최소가 실행되지 않습니다. */
+			var result=window.confirm("정말로 회원가입을 취소하기겠습니까?");
+			if(result){
+				return false;
+			}
+		}
+		/* 가입취소 버튼을 눌렀을떄 다시 한번더 묻는 창을 띄워주는데....묻는 창에는 확인 버튼과 취소버튼이 존재한다 */
+	</script>
+</head>
+<!-- 웹브라우저가 body에 하위 요소를 모두 로딩했을때.. 이름을 입력하는 input요소에 포커스를
+이동시킨다. -->
+<body onload="document.f1.user_name.focus();"> <!-- 커서가 깜빡인다. -->
+<!--onsubmit="return submit_chk(this)"는
+회원가입 전송 버튼을 눌렀을떄.. 함수 submit_chk()함수를 호출합니다. 여기서 this키워드는
+전송 이벤트가 발생한 form 요소를 말합니다. return함수에서 false를 반환받으면 action속성에 작성된 서버페이지로
+데이터 전송을 취소시킨다. return함수에서 true를 반환받으면 action속성에 작성된 서버페이지로 전송된다. -->
+	<form action="index.jsp" name="f1" onsubmit="return submit_chk(this);" 
+										onreset="return reset_chk(this);">
+		<!--return reset_chk(this) 가입 취소 버튼을 눌렸을떄 reset_chk()함수를 호출합니다.
+		여기서 this 키워드는 취소 이벤트가 발생한 form 태그를 가리킵니다. 역시 return문은 함수에서
+		false를 반환 받으면 reset기능이 취소됩니다. -->
+		<fieldset>								<!-- 이벤트가 발생당한요소가 this -->
+			<legend>회원가입</legend>            
+			<p>
+				<label>이름</label>
+				<input type="text" name="user_name" id="user_name"/>
+			</p>
+			<p>
+				<label>연락처</label>
+				<input type="text" name="user_tel" id="user_tel"/>
+			</p>
+			<p>
+				<input type="submit" value="회원가입"/>
+				<input type="reset" value="가입취소"/>
+			</p>
+		</fieldset>
+		<!-- get 방식 개발할때 post방식은 값을 대량으로 전송할때 주소를 노출안하고 개발한다. -->
+	</form>
+<!--전송 버튼을 클릭했을때 this 키워드를 이용해 이벤트가 발생한 form 요소를 함수의 
+매개변수에 전달하고 이 form 요소에 방문자가 입력한 값이 정규표현식 패턴에 맞게 되었으면 
+form 요소의 action속성에 지정한 페이지로 값들을 전송하는 예제. -->
+</body>
+</html>
